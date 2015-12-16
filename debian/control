@@ -1,0 +1,17 @@
+Source: dhis2-tools
+Section: java
+Priority: optional
+Maintainer: DHIS2 developers <dhis2-devs@lists.launchpad.net>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, docbook2x, lintian
+Standards-Version: 3.9.4
+Homepage: http://launchpad.net/dhis2
+#Vcs-Git: git://git.debian.org/collab-maint/hello.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/hello.git;a=summary
+
+Package: dhis2-tools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, postgresql-client,tomcat7-common (>= 7.0.26-1ubuntu1.1),netcat,libtcnative-1,makepasswd,unzip
+Description: Tools for managing dhis2 on ubuntu
+ This package contains a set of tools to assist with
+ the installation and maintenance of the dhis2 (http://dhis2.org)
+ software on ubuntu server.

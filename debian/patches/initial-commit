@@ -1,0 +1,81 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ dhis2-tools (1.2-0ubuntu1) trusty; urgency=low
+ .
+   * Initial release
+Author: keybase.io/ryanyates <ryanyates@keybase.io>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- dhis2-tools-1.2.orig/docs/Makefile
++++ dhis2-tools-1.2/docs/Makefile
+@@ -1,4 +1,5 @@
+ man: manual.xml
++	mkdir -p ../pkg/usr/share/man/man1
+ 	docbook2x-man manual.xml
+ 	gzip -f -9  *.1
+ 	cp -f *.1.gz ../pkg/usr/share/man/man1
+--- dhis2-tools-1.2.orig/docs/bookinfo/bookinfo.xml.bak
++++ dhis2-tools-1.2/docs/bookinfo/bookinfo.xml.bak
+@@ -5,7 +5,6 @@
+     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="copyright.xml" encoding="UTF-8"/>
+     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="authorgroup.xml" encoding="UTF-8"/>
+     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="legalnotice.xml" encoding="UTF-8"/>
+-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="../../../build.properties" encoding="UTF-8"/>
+ </bookinfo>
+ 
+ 
+--- /dev/null
++++ dhis2-tools-1.2/pkg/DEBIAN/md5sums
+@@ -0,0 +1,35 @@
++f791f873741fe6d5313466a0b66b0ed4  etc/sudoers.d/dhis2
++53b2f538d576cca2637b05ca56949634  usr/share/dhis2-tools/skel/conf/catalina.properties
++ebdd8afd70c587f30d11891dab9312ac  usr/share/dhis2-tools/skel/conf/server.xml
++76042188f7f1782c765bac3105d8a6c9  usr/share/dhis2-tools/skel/conf/web.xml
++73149380b771f15082b794ce8d88ffe1  usr/share/dhis2-tools/skel/conf/tomcat-users.xml
++5357912f02174c51bb29ea1f6d535be8  usr/share/dhis2-tools/skel/conf/logging.properties
++3be6b8ecaf5ec86e9f6072b948522cbf  usr/share/dhis2-tools/skel/conf/context.xml
++1ee28be09f72fc9e0f34ccaaffe67d68  usr/share/dhis2-tools/skel/conf/logrotate.conf
++56e439b6b62f5030360cd205cf5525d5  usr/share/dhis2-tools/skel/bin/setenv.sh
++0150381c5c98382cc63f393e04ae5b19  usr/share/dhis2-tools/samples/apache2/dhis2-ssl
++d9571867f9f608be35450c214323f53e  usr/share/dhis2-tools/samples/apache2/http-redirect
++786f1a299b30bd60a22559186cea7efb  usr/share/dhis2-tools/samples/nginx/dhis2
++ea7110d601d675092a718bd8d3334fd7  usr/share/dhis2-tools/doc/copyright
++e29d81de58a16b57e8f4f08693cca6f3  usr/share/doc/dhis2-tools/copyright
++c8f5b98bb643e0c300be792ebff557cb  usr/share/doc/dhis2-tools/changelog.gz
++fab408e0234f99d7358d8370e9ca413b  usr/share/man/man1/dhis2-shutdown.1.gz
++eb2710293754075f605039cc97195b4c  usr/share/man/man1/dhis2-clone.1.gz
++b43719c4d52c73675964c7f16c47d565  usr/share/man/man1/dhis2-logtail.1.gz
++a8394cfc0f40d1e36c04d7a300816e1a  usr/share/man/man1/dhis2-deploy-war.1.gz
++b36d7bea2c917f1703f2204c7e60ba31  usr/share/man/man1/dhis2-startup.1.gz
++2f26071efed7681f2cdd43ef43eb6517  usr/share/man/man1/dhis2-create-admin.1.gz
++9d45061116168949ebb7aa1ffb3dfdb3  usr/share/man/man1/dhis2-instance-create.1.gz
++1b3abfce9bb4be071fc2df9df55444b8  usr/share/man/man1/dhis2-logview.1.gz
++e768605803db748d395abfbd0c26b060  usr/bin/dhis2-nginx
++c38665bcaad464c6ef3db8c9479b8a20  usr/bin/dhis2-backup
++6d52b85524a5f60061d9355c6caf36c1  usr/bin/dhis2-logview
++13b9659a734ee39a0fac552a469e868e  usr/bin/dhis2-deploy-war
++d75ceb4c49db8dfa37b3671ec0c33790  usr/bin/dhis2-clone
++21c60ac49384d5299254f62f70c09c10  usr/bin/dhis2-logtail
++7e0015ae202401cc222346667c94db34  usr/bin/dhis2-startup
++4121679cd6ff95effc7e93293ea302ac  usr/bin/dhis2-create-admin
++d102327113b9f1c903a1ec601898a5db  usr/bin/dhis2-integrity
++79940d197f6a99fab634ac7d4bc02050  usr/bin/dhis2-restoredb
++0e93d972eb54b7db0932a4708396d55d  usr/bin/dhis2-shutdown
++776940c0eb29fc0bc431c07cfeb945b7  usr/bin/dhis2-instance-create

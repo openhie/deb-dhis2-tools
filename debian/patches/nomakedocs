@@ -1,0 +1,31 @@
+Description: Dont regen docs
+ .
+ dhis2-tools (1.2-0ubuntu1) trusty; urgency=low
+ .
+   * Initial release
+Author: keybase.io/ryanyates <ryanyates@keybase.io>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- dhis2-tools-1.2.orig/Makefile
++++ dhis2-tools-1.2/Makefile
+@@ -6,7 +6,7 @@ deb: doc
+ 	./assemble.sh $(TARGET)
+ 
+ doc:
+-	cd docs; make; cd ..
++	cd docs; cd ..
+ 
+ test: 
+ 	lintian $(TARGET)

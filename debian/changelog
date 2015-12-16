@@ -1,0 +1,17 @@
+dhis2-tools (1.2-1ubuntu0) trusty; urgency=medium
+
+  * prepare for repo 
+
+ -- keybase.io/ryanyates <ryanyates@keybase.io>  Wed, 16 Dec 2015 20:36:26 +0000
+
+dhis2-tools (1.2-0ubuntu2) trusty; urgency=medium
+
+  * Fix package build issue 
+
+ -- keybase.io/ryanyates <ryanyates@keybase.io>  Mon, 09 Nov 2015 20:39:32 +0000
+
+dhis2-tools (1.2-0ubuntu1) trusty; urgency=low
+
+  * Initial release 
+
+ -- keybase.io/ryanyates <ryanyates@keybase.io>  Mon, 09 Nov 2015 14:45:23 +0000
